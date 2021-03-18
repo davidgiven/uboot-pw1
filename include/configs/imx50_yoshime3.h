@@ -33,7 +33,7 @@
 
 #define CONFIG_SKIP_RELOCATE_UBOOT
 
-#define CONFIG_ARCH_CPU_INIT
+//#define CONFIG_ARCH_CPU_INIT
 
 #define CONFIG_MX50_HCLK_FREQ	24000000
 #define CONFIG_SYS_PLL2_FREQ    400
@@ -102,6 +102,8 @@
 #define CONFIG_MMC_USERDATA_SIZE	(5*1024)
 #define CONFIG_MMC_BIST_ADDR		(120*1024)
 #define CONFIG_MMC_BIST_SIZE		(256*1024)
+#define CONFIG_MMC_MAX_TRANSFER_SIZE	(0xFFFF * 512)
+#define CONFIG_MMC_TRACE
 /* detect whether ESDHC1 or ESDHC3 is boot device */
 /* #define CONFIG_DYNAMIC_MMC_DEVNO */
 #define CONFIG_BOOT_PARTITION_ACCESS
@@ -121,11 +123,14 @@
  * Command definition
  ***********************************************************/
 
+
 #define CONFIG_CMD_BOOTD	/* bootd			*/
 #define CONFIG_CMD_RUN		/* run command in env variable	*/
+#define CONFIG_CMD_MMC 1
+//#define CONFIG_SYS_LONGHELP
 
 /* Lab 126 cmds */
-#define CONFIG_CMD_BIST		1
+//#define CONFIG_CMD_BIST		1
 #define CONFIG_CMD_PMIC		1
 #define CONFIG_CMD_IDME		1
 #define CONFIG_CMD_HALT		1

@@ -103,6 +103,7 @@
 #define MMC_CMD_ERASE_GROUP_START	35
 #define MMC_CMD_ERASE_GROUP_END		36
 #define MMC_CMD_ERASE			38
+#define MMC_CMD_LOCK_UNLOCK             42
 #define MMC_CMD_APP_CMD			55
 #define MMC_CMD_SPI_READ_OCR		58
 #define MMC_CMD_SPI_CRC_ON_OFF		59
@@ -386,6 +387,7 @@ int mmc_init(struct mmc *mmc);
 void mmc_set_clock(struct mmc *mmc, uint clock);
 int mmc_read(int dev_num, u32 src, uchar *dst, u32 size);
 int mmc_write(int dev_num, uchar * src, u32 dst, u32 size);struct mmc *find_mmc_device(int dev_num);
+int mmc_unlock(int dev_num);
 int mmc_set_dev(int dev_num);
 void print_mmc_devices(char separator);
 int get_mmc_num(void);
