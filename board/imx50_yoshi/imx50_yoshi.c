@@ -334,6 +334,8 @@ int dram_init(void)
     while (1) {
 
 	board = get_board_type();
+	printf("overriding board type\n");
+	board = &boards[1];
 
 	if (board) {
 
